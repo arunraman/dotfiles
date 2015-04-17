@@ -1,0 +1,15 @@
+# List all files colorized in long format
+alias ll='ls -lh'
+
+# List all files colorized in long format, including dot files
+alias la="ls -lha"
+
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
+#other aliases
+alias ls='ls -G'
+alias c='clear'
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
