@@ -2,8 +2,6 @@
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 export PATH
-export http_proxy=http://www-proxy.us.oracle.com:80
-export https_proxy=https://www-proxy.us.oracle.com:80
 export WORKON_HOME="$HOME/.virtualenvs"
 source "/usr/local/bin/virtualenvwrapper.sh"
 # Load the shell dotfiles, and then some:
