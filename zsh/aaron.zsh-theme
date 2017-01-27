@@ -171,6 +171,9 @@ function vi_mode_prompt_info() {
   echo "${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
 }
 
+function battery_charge {
+   echo `/usr/local/bin/batcharge.py`
+}
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -181,6 +184,6 @@ build_prompt() {
   prompt_git
   prompt_end
 }
-
+#RPROMPT='$(battery_charge)'
 PROMPT='%{%f%b%k%}$(build_prompt)
 $(prompt_next_line) '
