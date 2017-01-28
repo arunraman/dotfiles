@@ -34,8 +34,13 @@ class Setup():
         for item in os.listdir(b_path):
             os.symlink(os.path.join(b_path, item), os.path.join(self.user_path, item))
 
+    def setup_vim(self):
+        v_path = os.path.join(self.dir_path, 'vim')
+        for item in os.listdir(v_path):
+            os.symlink(os.path.join(v_path, item), os.path.join(self.user_path, item))
 
 S = Setup(raw_input('Enter your username '))
-#S.add_proxy()
-#S.setup_zsh()
-#S.setup_bash()
+S.add_proxy()
+S.setup_zsh()
+S.setup_bash()
+S.setup_vim()
