@@ -9,8 +9,8 @@ Collection of all the all the dotfiles for dev setup.
 3.  PyCharm
 4.  TextWrangler
 5.  Git
-6.  zsh
 7.  Homebrew
+8.  Prezto
 8.  Window Tidy
 9.  Copy Clip
 10. Super Tab
