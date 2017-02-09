@@ -19,13 +19,6 @@ Collection of all the all the dotfiles for dev setup.
 
 ## **Setup**
 
-Run setup.py. The vim, bash and zsh setup will symlink all the dotfiles 
-to the files in home directory.
-
-```
-python setup.py
-```
-
 Install Homebrew:
 
 ```
@@ -36,4 +29,39 @@ After Homebrew is installed, install brew packages
 
 ``` 
 <brew_list.txt xargs brew install
+```
+
+Crate a separate working branch for dotfiles so that master branch is always clean.
+
+```
+git checkout -b working
+
+```
+
+Install Prezto after changing from bash to zsh 
+
+
+```
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+Change to zsh 
+
+```
+zsh
+
+```
+Get prezto default configuration
+```
+$ setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+Run setup.py. The vim, bash setup will symlink all the dotfiles 
+to the files in home directory.
+
+The zsh setup will symlink .zalias, .zexports, .zextra  
+
+```
+python setup.py
 ```
