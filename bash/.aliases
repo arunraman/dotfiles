@@ -12,6 +12,7 @@ alias ls='ls -G'
 alias c='clear'
 alias h='history'
 alias dl="cd ~/Downloads"
+alias subl="sublime"
 
 # SSH
 sk(){ ssh-keygen -R "$1"; }
