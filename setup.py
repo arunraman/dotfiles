@@ -26,7 +26,6 @@ class Setup():
     def setup_zsh(self):
         z_path = os.path.join(self.dir_path, 'zsh')
         prezo_path = os.path.join(self.user_path, '.zprezto/runcoms')
-        #z_theme_path = os.path.join(self.user_path, '.oh-my-zsh/themes')
         for item in os.listdir(z_path):
             if item.startswith('.'):
                 print item
