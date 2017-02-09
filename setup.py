@@ -1,5 +1,4 @@
 import os
-from shutil import copyfile
 
 
 class Setup():
@@ -28,12 +27,12 @@ class Setup():
         z_theme_path = os.path.join(self.user_path, '.oh-my-zsh/themes')
         for item in os.listdir(z_path):
             if item == "aaron.zsh-theme":
-                copyfile(
+                os.symlink(
                     os.path.join(
                         z_path, item), os.path.join(
                         z_theme_path, item))
             else:
-                copyfile(
+                os.symlink(
                     os.path.join(
                         z_path, item), os.path.join(
                         self.user_path, item))
@@ -41,7 +40,7 @@ class Setup():
     def setup_bash(self):
         b_path = os.path.join(self.dir_path, 'bash')
         for item in os.listdir(b_path):
-            copyfile(
+            os.symlink(
                 os.path.join(
                     b_path, item), os.path.join(
                     self.user_path, item))
@@ -49,7 +48,7 @@ class Setup():
     def setup_vim(self):
         v_path = os.path.join(self.dir_path, 'vim')
         for item in os.listdir(v_path):
-            copyfile(
+            os.symlink(
                 os.path.join(
                     v_path, item), os.path.join(
                     self.user_path, item))
