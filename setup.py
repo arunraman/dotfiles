@@ -1,7 +1,9 @@
 import os
 from shutil import copyfile
 
+
 class Setup():
+
     def __init__(self, username):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.user_path = os.path.join('/Users', username)
@@ -12,7 +14,7 @@ class Setup():
         z_extra_path = os.path.join(self.user_path, '.zextra')
         bash_extra_path = os.path.join(self.user_path, '.extra')
         with open(z_extra_path, "a") as A, open(bash_extra_path, "a") as B:
-            A.write('export '+ http_proxy)
+            A.write('export ' + http_proxy)
             A.write("\n")
             A.write('export ' + https_proxy)
             A.close()
@@ -26,19 +28,31 @@ class Setup():
         z_theme_path = os.path.join(self.user_path, '.oh-my-zsh/themes')
         for item in os.listdir(z_path):
             if item == "aaron.zsh-theme":
-                copyfile(os.path.join(z_path, item), os.path.join(z_theme_path, item))
+                copyfile(
+                    os.path.join(
+                        z_path, item), os.path.join(
+                        z_theme_path, item))
             else:
-                copyfile(os.path.join(z_path, item), os.path.join(self.user_path, item))
+                copyfile(
+                    os.path.join(
+                        z_path, item), os.path.join(
+                        self.user_path, item))
 
     def setup_bash(self):
         b_path = os.path.join(self.dir_path, 'bash')
         for item in os.listdir(b_path):
-            copyfile(os.path.join(b_path, item), os.path.join(self.user_path, item))
+            copyfile(
+                os.path.join(
+                    b_path, item), os.path.join(
+                    self.user_path, item))
 
     def setup_vim(self):
         v_path = os.path.join(self.dir_path, 'vim')
         for item in os.listdir(v_path):
-            copyfile(os.path.join(v_path, item), os.path.join(self.user_path, item))
+            copyfile(
+                os.path.join(
+                    v_path, item), os.path.join(
+                    self.user_path, item))
 
 S = Setup(raw_input('Enter your username '))
 S.add_proxy()
