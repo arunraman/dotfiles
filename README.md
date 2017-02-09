@@ -57,11 +57,20 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 ```
-Run setup.py. The vim, bash setup will symlink all the dotfiles 
-to the files in home directory.
-
-The zsh setup will symlink .zalias, .zexports, .zextra  
+Run setup.py
 
 ```
 python setup.py
 ```
+
+This will symlink .vimrc and all bash files to the 
+to the files in home directory.
+
+The zsh setup will symlink .zalias, .zexports, .zfunc and create .zextra for setting the proxy details. 
+It will also copy zshrc, zpreztorc and zprofile to
+ 
+```
+\Users\<username>\.zprezto\runcoms
+
+```
+

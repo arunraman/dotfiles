@@ -1,4 +1,5 @@
 import os
+from shutil import copyfile
 
 
 class Setup():
@@ -24,18 +25,21 @@ class Setup():
 
     def setup_zsh(self):
         z_path = os.path.join(self.dir_path, 'zsh')
-        z_theme_path = os.path.join(self.user_path, '.oh-my-zsh/themes')
+        prezo_path = os.path.join(self.user_path, '.zprezto/runcoms')
+        #z_theme_path = os.path.join(self.user_path, '.oh-my-zsh/themes')
         for item in os.listdir(z_path):
-            if item == "aaron.zsh-theme":
+            if item.startswith('.'):
+                print item
                 os.symlink(
-                    os.path.join(
-                        z_path, item), os.path.join(
-                        z_theme_path, item))
-            else:
-                os.symlink(
-                    os.path.join(
+                        os.path.join(
                         z_path, item), os.path.join(
                         self.user_path, item))
+            else:
+                if item != "aaron.zsh-theme":
+                    copyfile(
+                        os.path.join(
+                            z_path, item), os.path.join(
+                            prezo_path, item))
 
     def setup_bash(self):
         b_path = os.path.join(self.dir_path, 'bash')
@@ -54,7 +58,7 @@ class Setup():
                     self.user_path, item))
 
 S = Setup(raw_input('Enter your username '))
-S.add_proxy()
+#S.add_proxy()
 S.setup_zsh()
-S.setup_bash()
-S.setup_vim()
+#S.setup_bash()
+#S.setup_vim()
