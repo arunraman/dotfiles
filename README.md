@@ -52,7 +52,7 @@ zsh
 ```
 Get prezto default configuration
 ```
-$ setopt EXTENDED_GLOB
+setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
@@ -65,6 +65,18 @@ python setup.py
 
 This will symlink .vimrc and all bash files to the 
 to the files in home directory.
+
+Install vundle for vim
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+```
+Open vim and install all the plugins
+```
+:PluginInstall
+
+```
 
 The zsh setup will symlink .zalias, .zexports, .zfunc and create .zextra for setting the proxy details. 
 It will also copy zshrc, zpreztorc and zprofile to
