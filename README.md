@@ -66,6 +66,17 @@ python setup.py
 This will symlink .vimrc and all bash files to the 
 to the files in home directory.
 
+Change the default shell from bash to zsh
+
+```
+http://apple.stackexchange.com/questions/88278/change-default-shell-from-bash-to-zsh/88296#88296
+```
+
+```
+
+jenv enable-plugin export
+```
+
 Install vundle for vim
 
 ```

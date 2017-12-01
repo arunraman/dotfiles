@@ -39,3 +39,9 @@ fi;
     tr ' ' '\n')" scp sftp ssh
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+
+# Added by Canopy installer on 2017-03-03
+# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make the bash prompt show that Canopy is active, otherwise 1
+alias activate_canopy="source '/Users/aruraman/Library/Enthought/Canopy_64bit/User/bin/activate'"
+# VIRTUAL_ENV_DISABLE_PROMPT=1 source '/Users/aruraman/Library/Enthought/Canopy_64bit/User/bin/activate'
