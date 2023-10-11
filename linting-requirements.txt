@@ -1,0 +1,4 @@
+bandit
+prospector[with_pyroma]
+flake8
+black
